@@ -89,3 +89,14 @@ def close():
     print(tasks)
     # use destroy method to close app
     guiWindow.destroy()
+
+
+# func to retrieve data from db
+def retrieve_database():
+    while (len(tasks) != 0):
+        # use pop len will reach 0 when all tasks popped
+        tasks.pop()
+    # iterate through rows in db table
+    for row in the_cursor.execute('select title from the tasks'):
+        # insert titles from table to list
+        tasks.append(row[0])
