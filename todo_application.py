@@ -59,3 +59,33 @@ def delete_task():
     except:
         # display msg box w/ msg for exception
         messagebox.showinfo('Error', 'No Task Selected, Can Not Delete')
+
+# func to delete all tasks
+
+
+def delete_all_tasks():
+    # ask user for confirmation
+    message_box = messagebox.askyesno('Delete All', 'Are you sure?')
+    # if value true
+    if message_box == True:
+        # loop till empty
+        while (len(tasks) != 0):
+            # pop elements
+            tasks.pop()
+        # execute sql statement
+        the_cursor.execute('delete from tasks')
+        list_update()
+
+# func to clear list
+
+
+def clear_list():
+    task_listbox.delete(0, 'end')
+
+# func to close app
+
+
+def close():
+    print(tasks)
+    # use destroy method to close app
+    guiWindow.destroy()
