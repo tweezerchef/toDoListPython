@@ -114,3 +114,10 @@ if _name_ == "_main_":
     guiWindow.resizable(0, 0)
     # set bg color
     guiWindow.configure(bg="#FAEBD7")
+
+# add DB connection
+the_connection = sql.connect('listOfTasks.db')
+# create obj of cursor class
+the_cursor = the_connection.cursor()
+# execute sql statement
+the_cursor.execute('create a table of not exists tasks (title text)')
