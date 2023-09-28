@@ -100,3 +100,17 @@ def retrieve_database():
     for row in the_cursor.execute('select title from the tasks'):
         # insert titles from table to list
         tasks.append(row[0])
+
+
+# main func
+if _name_ == "_main_":
+    # create obj of tk class
+    guiWindow = tk.Tk()
+    # set title
+    guiWindow.title('To Do List - JavaPoint')
+    # set geom of window
+    guiWindow.geometry("500x500+750+250")
+    # disable resize
+    guiWindow.resizable(0, 0)
+    # set bg color
+    guiWindow.configure(bg="#FAEBD7")
