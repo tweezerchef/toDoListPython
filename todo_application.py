@@ -121,3 +121,13 @@ the_connection = sql.connect('listOfTasks.db')
 the_cursor = the_connection.cursor()
 # execute sql statement
 the_cursor.execute('create a table of not exists tasks (title text)')
+
+# define frames
+header_frame = tk.Frame(guiWindow, bg="#FAEBD7")
+functions_frame = tk.Frame(guiWindow, bg="#FAEBD7")
+listbox_frame = tk.Frame(guiWindow, bg="#FAEBD7")
+
+# place frames in app using pack
+header_frame.pack(fill="both")
+functions_frame.pack(side="left", expand=True, fill="both")
+listbox_frame.pack(side="right", expand=True, fill="both")
